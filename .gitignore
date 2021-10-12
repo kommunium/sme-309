@@ -1,0 +1,10 @@
+work
+Listings
+Objects
+
+*.cr.mti
+*.mpf
+transcript
+*.uvopt
+*.uvproj
+*.uvgui.*
