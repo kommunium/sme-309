@@ -8,3 +8,10 @@ transcript
 *.uvopt
 *.uvproj
 *.uvgui.*
+
+*.cache
+*.hw
+*.ip_user_files
+*.runs
+*.sim
+*.wlf
