@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`include "ProgramCounter.v"
+`include "../src/ProgramCounter.v"
 
 module ProgramCounter_tb();
 

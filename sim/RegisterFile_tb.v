@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`include"RegisterFile.v"
+`include "../src/RegisterFile.v"
 
 module RegisterFile_tb();
 

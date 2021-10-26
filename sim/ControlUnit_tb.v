@@ -1,5 +1,5 @@
 `timescale 1ns/1ps
-`include "ControlUnit.v"
+`include "../src/ControlUnit.v"
 
 module ControlUnit_tb();
 
