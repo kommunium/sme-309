@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="ARMcore_top_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="ARMcore_top_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="213.650 ns"></ZoomStartTime>
+      <ZoomEndTime time="380.315 ns"></ZoomEndTime>
+      <Cursor1Time time="296.328 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="210"></NameColumnWidth>
+      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/ARMcore_top_tb/CLK" type="logic">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/instrMem/Instr" type="array">
+      <obj_property name="ElementShortName">Instr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Instr[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/dataMem/DATA_MEM" type="array">
+      <obj_property name="ElementShortName">DATA_MEM[0:127][31:0]</obj_property>
+      <obj_property name="ObjectShortName">DATA_MEM[0:127][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/R15" type="array">
+      <obj_property name="ElementShortName">R15[31:0]</obj_property>
+      <obj_property name="ObjectShortName">R15[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/Result" type="array">
+      <obj_property name="ElementShortName">Result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A1" type="array">
+      <obj_property name="ElementShortName">A1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A2" type="array">
+      <obj_property name="ElementShortName">A2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A2[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A3" type="array">
+      <obj_property name="ElementShortName">A3[3:0]</obj_property>
+      <obj_property name="ObjectShortName">A3[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RD1" type="array">
+      <obj_property name="ElementShortName">RD1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RD1[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RD2" type="array">
+      <obj_property name="ElementShortName">RD2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RD2[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/WE3" type="logic">
+      <obj_property name="ElementShortName">WE3</obj_property>
+      <obj_property name="ObjectShortName">WE3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/WD3" type="array">
+      <obj_property name="ElementShortName">WD3[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WD3[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RegBankCore[5]" type="array">
+      <obj_property name="ElementShortName">[5][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/ALUFlags" type="array">
+      <obj_property name="ElementShortName">ALUFlags[3:0]</obj_property>
+      <obj_property name="ObjectShortName">ALUFlags[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/programCounter/next_PC" type="array">
+      <obj_property name="ElementShortName">next_PC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">next_PC[31:0]</obj_property>
+   </wvobject>
+</wave_config>
