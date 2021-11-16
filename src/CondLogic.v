@@ -32,34 +32,36 @@ module CondLogic(
   //! Condition Check
   always @(*)
     case (Cond)
+      4'b0000:
+        CondEx = Z; // EQ -Equal
       4'b0001 :
-        CondEx = Z; // NE - Not equal
+        CondEx = !Z; // NE - Not equal
       4'b0010 :
-        CondEx = !Z; // CS / HS- Carry set / Unsigned higher or same
+        CondEx = C; // CS / HS- Carry set / Unsigned higher or same
       4'b0011 :
-        CondEx = C; // CC / LO - Carry clear / Unsigned lower
+        CondEx = !C; // CC / LO - Carry clear / Unsigned lower
       4'b0100 :
-        CondEx = !C; // MI - Minus / Negative
+        CondEx = !N; // MI - Minus / Negative
       4'b0101 :
-        CondEx = !N; // PL - Plus / Positive of zero
+        CondEx = V; // PL - Plus / Positive of zero
       4'b0110 :
-        CondEx = V; // VS - Overflow / Overflow set
+        CondEx = !V; // VS - Overflow / Overflow set
       4'b0111 :
-        CondEx = !V; // VC - No overflow / Overflow clear
+        CondEx = !Z & C; // VC - No overflow / Overflow clear
       4'b1000 :
-        CondEx = !Z & C; // HI - Unsined lower or same
+        CondEx = Z | !C; // HI - Unsined lower or same
       4'b1001 :
-        CondEx = Z | !C; // LS - Unsined lower or same
+        CondEx = !(N ^ V); // LS - Unsined lower or same
       4'b1010 :
-        CondEx = !(N ^ V); // GE -  Signed greater than or equal
+        CondEx = N ^ V; // GE -  Signed greater than or equal
       4'b1011 :
-        CondEx = N ^ V; // LT - Signed less than
+        CondEx = !Z & !(N ^ V); // LT - Signed less than
       4'b1100 :
-        CondEx = !Z & !(N ^ V); // GT - Signed greater than
+        CondEx = Z | (N ^ V); // GT - Signed greater than
       4'b1101 :
-        CondEx = Z | (N ^ V); // LE - Signed less than or equal
+        CondEx = Z; // LE - Signed less than or equal
       default:
-        CondEx = Z; // EQ - Equal
+        CondEx = 1'b1; // AL - Always / unconditional
     endcase
 
 endmodule

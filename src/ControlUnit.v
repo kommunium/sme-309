@@ -1,4 +1,4 @@
-`include "../lab-4/Decoder.v"
+`include "Decoder.v"
 `include "CondLogic.v"
 
 module ControlUnit(
@@ -15,11 +15,10 @@ module ControlUnit(
     output [1:0] ALUControl,
     output PCSrc);
 
-  wire [4:0] Cond;
-  wire PSC, RegW, MemW;
+  wire [4:0] Cond = Instr[31:28];
+  wire PCS, RegW, MemW;
   wire [1:0] FlagW;
 
-  assign Cond = Instr[31:28];
 
   CondLogic CondLogic1(
               CLK,
