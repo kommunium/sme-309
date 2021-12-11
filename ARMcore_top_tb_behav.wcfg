@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="213.650 ns"></ZoomStartTime>
-      <ZoomEndTime time="380.315 ns"></ZoomEndTime>
-      <Cursor1Time time="296.328 ns"></Cursor1Time>
+      <ZoomStartTime time="1,333.055 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,433.803 ns"></ZoomEndTime>
+      <Cursor1Time time="1,350.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="210"></NameColumnWidth>
-      <ValueColumnWidth column_width="88"></ValueColumnWidth>
+      <NameColumnWidth column_width="266"></NameColumnWidth>
+      <ValueColumnWidth column_width="104"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="16" />
+   <WVObjectSize size="15" />
    <wvobject fp_name="/ARMcore_top_tb/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -32,17 +32,15 @@
       <obj_property name="ElementShortName">Instr[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instr[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/dataMem/DATA_MEM" type="array">
-      <obj_property name="ElementShortName">DATA_MEM[0:127][31:0]</obj_property>
-      <obj_property name="ObjectShortName">DATA_MEM[0:127][31:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/R15" type="array">
       <obj_property name="ElementShortName">R15[31:0]</obj_property>
       <obj_property name="ObjectShortName">R15[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/Result" type="array">
       <obj_property name="ElementShortName">Result[31:0]</obj_property>
       <obj_property name="ObjectShortName">Result[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A1" type="array">
       <obj_property name="ElementShortName">A1[3:0]</obj_property>
@@ -64,24 +62,26 @@
       <obj_property name="ElementShortName">RD2[31:0]</obj_property>
       <obj_property name="ObjectShortName">RD2[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/WE3" type="logic">
-      <obj_property name="ElementShortName">WE3</obj_property>
-      <obj_property name="ObjectShortName">WE3</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RegBankCore" type="array">
+      <obj_property name="ElementShortName">RegBankCore[0:14][31:0]</obj_property>
+      <obj_property name="ObjectShortName">RegBankCore[0:14][31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/WD3" type="array">
-      <obj_property name="ElementShortName">WD3[31:0]</obj_property>
-      <obj_property name="ObjectShortName">WD3[31:0]</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/N" type="logic">
+      <obj_property name="ElementShortName">N</obj_property>
+      <obj_property name="ObjectShortName">N</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RegBankCore[5]" type="array">
-      <obj_property name="ElementShortName">[5][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/Z" type="logic">
+      <obj_property name="ElementShortName">Z</obj_property>
+      <obj_property name="ObjectShortName">Z</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/ALUFlags" type="array">
-      <obj_property name="ElementShortName">ALUFlags[3:0]</obj_property>
-      <obj_property name="ObjectShortName">ALUFlags[3:0]</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/C" type="logic">
+      <obj_property name="ElementShortName">C</obj_property>
+      <obj_property name="ObjectShortName">C</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/programCounter/next_PC" type="array">
-      <obj_property name="ElementShortName">next_PC[31:0]</obj_property>
-      <obj_property name="ObjectShortName">next_PC[31:0]</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/V" type="logic">
+      <obj_property name="ElementShortName">V</obj_property>
+      <obj_property name="ObjectShortName">V</obj_property>
    </wvobject>
 </wave_config>
