@@ -15,7 +15,7 @@ module ControlUnit(
     output [1:0] ALUControl,
     output PCSrc);
 
-  wire [4:0] Cond = Instr[31:28];
+  wire [3:0] Cond = Instr[31:28];
   wire PCS, RegW, MemW;
   wire [1:0] FlagW;
 
