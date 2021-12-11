@@ -15,3 +15,9 @@ transcript
 *.runs
 *.sim
 *.wlf
+
+*.scvd
+*.wcfg
+*.xpr
+
+.vscode
