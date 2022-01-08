@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,333.055 ns"></ZoomStartTime>
-      <ZoomEndTime time="1,433.803 ns"></ZoomEndTime>
-      <Cursor1Time time="1,350.000 ns"></Cursor1Time>
+      <ZoomStartTime time="606.560 ns"></ZoomStartTime>
+      <ZoomEndTime time="615.011 ns"></ZoomEndTime>
+      <Cursor1Time time="589.060 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="266"></NameColumnWidth>
-      <ValueColumnWidth column_width="104"></ValueColumnWidth>
+      <NameColumnWidth column_width="225"></NameColumnWidth>
+      <ValueColumnWidth column_width="107"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="15" />
+   <WVObjectSize size="14" />
    <wvobject fp_name="/ARMcore_top_tb/CLK" type="logic">
       <obj_property name="ElementShortName">CLK</obj_property>
       <obj_property name="ObjectShortName">CLK</obj_property>
@@ -32,28 +32,6 @@
       <obj_property name="ElementShortName">Instr[31:0]</obj_property>
       <obj_property name="ObjectShortName">Instr[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/R15" type="array">
-      <obj_property name="ElementShortName">R15[31:0]</obj_property>
-      <obj_property name="ObjectShortName">R15[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/Result" type="array">
-      <obj_property name="ElementShortName">Result[31:0]</obj_property>
-      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
-      <obj_property name="Radix">HEXRADIX</obj_property>
-   </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A1" type="array">
-      <obj_property name="ElementShortName">A1[3:0]</obj_property>
-      <obj_property name="ObjectShortName">A1[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A2" type="array">
-      <obj_property name="ElementShortName">A2[3:0]</obj_property>
-      <obj_property name="ObjectShortName">A2[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/A3" type="array">
-      <obj_property name="ElementShortName">A3[3:0]</obj_property>
-      <obj_property name="ObjectShortName">A3[3:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RD1" type="array">
       <obj_property name="ElementShortName">RD1[31:0]</obj_property>
       <obj_property name="ObjectShortName">RD1[31:0]</obj_property>
@@ -62,26 +40,42 @@
       <obj_property name="ElementShortName">RD2[31:0]</obj_property>
       <obj_property name="ObjectShortName">RD2[31:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/registerFile/RegBankCore" type="array">
-      <obj_property name="ElementShortName">RegBankCore[0:14][31:0]</obj_property>
-      <obj_property name="ObjectShortName">RegBankCore[0:14][31:0]</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/Result" type="array">
+      <obj_property name="ElementShortName">Result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Result[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
-      <obj_property name="isExpanded"></obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/N" type="logic">
-      <obj_property name="ElementShortName">N</obj_property>
-      <obj_property name="ObjectShortName">N</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/CLK_MUL" type="logic">
+      <obj_property name="ElementShortName">CLK_MUL</obj_property>
+      <obj_property name="ObjectShortName">CLK_MUL</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/Z" type="logic">
-      <obj_property name="ElementShortName">Z</obj_property>
-      <obj_property name="ObjectShortName">Z</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/Reset" type="logic">
+      <obj_property name="ElementShortName">Reset</obj_property>
+      <obj_property name="ObjectShortName">Reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/C" type="logic">
-      <obj_property name="ElementShortName">C</obj_property>
-      <obj_property name="ObjectShortName">C</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/MUL_EN" type="logic">
+      <obj_property name="ElementShortName">MUL_EN</obj_property>
+      <obj_property name="ObjectShortName">MUL_EN</obj_property>
    </wvobject>
-   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/controlUnit/CondLogic1/V" type="logic">
-      <obj_property name="ElementShortName">V</obj_property>
-      <obj_property name="ObjectShortName">V</obj_property>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/MULOp" type="logic">
+      <obj_property name="ElementShortName">MULOp</obj_property>
+      <obj_property name="ObjectShortName">MULOp</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/Sum" type="array">
+      <obj_property name="ElementShortName">Sum[31:0]</obj_property>
+      <obj_property name="ObjectShortName">Sum[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/Busy" type="logic">
+      <obj_property name="ElementShortName">Busy</obj_property>
+      <obj_property name="ObjectShortName">Busy</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/counter" type="array">
+      <obj_property name="ElementShortName">counter[5:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[5:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/ARMcore_top_tb/ARMcore0/alu/multiplier/Product" type="array">
+      <obj_property name="ElementShortName">Product[63:0]</obj_property>
+      <obj_property name="ObjectShortName">Product[63:0]</obj_property>
    </wvobject>
 </wave_config>

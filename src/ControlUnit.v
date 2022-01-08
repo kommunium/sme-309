@@ -12,7 +12,7 @@ module ControlUnit(
     output [1:0] ImmSrc,
     output RegWrite,
     output [1:0] RegSrc,
-    output [1:0] ALUControl,
+    output [2:0] ALUControl,
     output PCSrc);
 
   wire [3:0] Cond = Instr[31:28];
@@ -20,7 +20,7 @@ module ControlUnit(
   wire [1:0] FlagW;
 
 
-  CondLogic CondLogic1(
+  CondLogic condLogic(
               CLK,
               PCS,
               RegW,
@@ -33,7 +33,7 @@ module ControlUnit(
               RegWrite,
               MemWrite);
 
-  Decoder Decoder1(
+  Decoder decoder(
             Instr,
 
             MemtoReg,

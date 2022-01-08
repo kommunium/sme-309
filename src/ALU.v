@@ -1,7 +1,13 @@
+`include "Multiplier.v"
+
 module ALU(
     input [31:0] A,
     input [31:0] B,
-    input [1:0] ALUControl,
+    input [2:0] ALUControl,
+
+    input CLK_MUL,
+    input MReset,
+    output Busy,
 
     output reg [31:0] Result,
     output [3:0] ALUFlags
@@ -9,25 +15,70 @@ module ALU(
 
 
   //! FullAdder32
-  reg [31:0] AddIn;
+  reg [31:0] AddInA, AddInB;
   wire [31:0] Sum;
   wire Cout;
-  wire Cin = ALUControl[0];
-  FullAdder32 fulladder(A, AddIn, Cin, Sum, Cout);
+  reg Cin;
+  FullAdder32 fulladder(AddInA, AddInB, Cin, Sum, Cout);
 
-  //! Result
+  //! Multiplier
+  wire [31:0] MResult, MAddInA, MAddInB;
+  wire MCin, MULOp, MUL_EN;
+  Multiplier multiplier(
+               .CLK_MUL(CLK_MUL),
+               .Reset(MReset),
+               .MUL_EN(MUL_EN),
+               .MULOp(MULOp),
+               .Operand1(A),
+               .Operand2(B),
+
+               .Sum(Sum),
+               .MAddInA(MAddInA),
+               .MAddInB(MAddInB),
+               .MCin(MCin),
+
+               .Result(MResult),
+               .Busy(Busy)
+             );
+
+  //! Define control signal for the multiplier.
+  assign MUL_EN = ALUControl[2:1] == 2'b10;
+  assign MULOp = ALUControl[0];
+
+  //! In multiplication, Multiplier takes control of the Fulladder
+  always @(*)
+    begin
+      if (MUL_EN)
+        begin
+          AddInA = MAddInA;
+          AddInB = MAddInB;
+          if (MULOp)
+            Cin = MCin;
+        end
+      else
+        begin
+          Cin = ALUControl[0];
+          AddInA = A;
+          if (Cin)
+            AddInB = ~B;
+          else
+            AddInB = B;
+        end
+    end
+
+
+  //! Result define
   always  @(*)
     begin: Result_Define
-      if (Cin)
-        AddIn = ~B;
-      else
-        AddIn = B;
-
       case (ALUControl)
-        2'b11:
+        3'b011:
           Result = A | B;
-        2'b10:
+        3'b010:
           Result = A & B;
+        3'b100:
+          Result = MResult;
+        3'b101:
+          Result = MResult;
         default:
           Result = Sum;
       endcase
@@ -83,7 +134,8 @@ module FullAdder32 (
                       .B(B[i]),
                       .Cin(Cout_tmp[i - 1]),
                       .Sum(Sum[i]),
-                      .Cout(Cout_tmp[i]));
+                      .Cout(Cout_tmp[i]))
+                    ;
       end
   endgenerate
 

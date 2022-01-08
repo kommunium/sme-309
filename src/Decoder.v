@@ -7,7 +7,7 @@ module Decoder(
     output reg [1:0] ImmSrc,
     output reg RegW,
     output reg [1:0] RegSrc,
-    output reg [1:0] ALUControl,
+    output reg [2:0] ALUControl,
     output reg [1:0] FlagW,
     output reg PCS
   );
@@ -34,32 +34,45 @@ module Decoder(
       {Branch, MemtoReg, MemW, ALUSrc, ImmSrc, RegW, RegSrc, ALUOp} = Main;
     end
 
-  reg [3:0] ALU;
+  reg [4:0] ALU;
   //! ALU Decoder
   always @(*)
     begin
       case ({ALUOp, Instr[24:20]}) // ALUOp, Funct4:1, Funct0
         6'b101000 :
-          ALU = 4'b0000; // ADD
+          ALU = 5'b00000; // ADD
         6'b101001 :
-          ALU = 4'b0011; // ADDS
+          ALU = 5'b00011; // ADDS
         6'b100100 :
-          ALU = 4'b0100; // SUB
+          ALU = 5'b00100; // SUB
         6'b100101 :
-          ALU = 4'b0111; // SUBS
+          ALU = 5'b00111; // SUBS
         6'b100000 :
-          ALU = 4'b1000; // AND
+          ALU = 5'b01000; // AND
         6'b100001 :
-          ALU = 4'b1010; // ANDS
+          ALU = 5'b01010; // ANDS
         6'b111000 :
-          ALU = 4'b1100; // ORR
+          ALU = 5'b01100; // ORR
         6'b111001 :
-          ALU = 4'b1110; // ORRS
+          ALU = 5'b01110; // ORRS
+
+        6'b111100:
+          ALU = 5'b10100; // SMUL
+        6'b111101:
+          ALU = 5'b10110; // SMULS
+        6'b101110:
+          ALU = 5'b10000; // UMUL
+        6'b101111:
+          ALU = 5'b10010; // UMULS
+
         default:
-          ALU = 4'b0000; // Not DP
+          ALU = 5'b00000; // Not DP
       endcase
+
       {ALUControl, FlagW} = ALU;
+
     end
+
 
   //! PC Logic
   always @(*)

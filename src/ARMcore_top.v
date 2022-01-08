@@ -1,15 +1,26 @@
 module ARMcore_top(
     input wire CLK,
+    input wire CLK_MUL,
     input wire Reset
   );
 
 
   //! ALU instance
   reg [31:0] SrcA, SrcB;
-  wire [1:0] ALUControl;
+  wire [2:0] ALUControl;
 
   wire [31:0] ALUResult;
   wire [3:0] ALUFlags;
+
+  wire Busy;
+  reg MReset;
+
+  always @(posedge CLK)
+    if (ALUControl[2] & ~Busy)
+      MReset <= 1'b1;
+    else
+      MReset <= Reset;
+
 
   ALU alu(
         .A(SrcA),
@@ -17,7 +28,11 @@ module ARMcore_top(
         .ALUControl(ALUControl),
 
         .Result(ALUResult),
-        .ALUFlags(ALUFlags)
+        .ALUFlags(ALUFlags),
+
+        .MReset(MReset),
+        .CLK_MUL(CLK_MUL),
+        .Busy(Busy)
       );
 
 
@@ -68,6 +83,7 @@ module ARMcore_top(
                    .Reset(Reset),
                    .PCSrc(PCSrc),
                    .Result(Result),
+                   .Busy(Busy),
 
                    .PC(PC),
                    .PC_Plus_4(PCPlus4)

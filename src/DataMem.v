@@ -17,13 +17,9 @@ module DataMem(
 
   initial
     begin
-      DATA_MEM[0] = 32'h0000_0000;
-      DATA_MEM[1] = 32'h0000_000F;
-      DATA_MEM[2] = 32'h0000_00F0;
-      DATA_MEM[3] = 32'h0000_0F00;
-      DATA_MEM[4] = 32'h0000_F000;
-      DATA_MEM[5] = 32'h0F0F_0F0F;
-      DATA_MEM[6] = 32'hF0F0_F0F0;
+      DATA_MEM[0] = 32'h00000000;
+      DATA_MEM[1] = 32'h00000002;
+      DATA_MEM[2] = 32'hFFFFFFFE;
     end
 
 

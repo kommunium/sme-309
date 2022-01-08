@@ -1,10 +1,11 @@
 module ProgramCounter (
     input CLK,
-    input Reset, // reset is high-active
-    input PCSrc, // PC source
-    input [31:0] Result, // From ALU
+    input Reset, //! reset is high-active
+    input PCSrc, //! PC source
+    input [31:0] Result, //! From ALU
+    input Busy, //! From Multilier
 
-    output [31:0] PC,
+    output reg [31:0] PC,
     output [31:0] PC_Plus_4
   );
 
@@ -19,12 +20,11 @@ module ProgramCounter (
   reg [31:0] PC_tmp;
 
   always @(posedge CLK)
-    if (Reset == 1'b1)
-      PC_tmp <= 0;
-    else
-      PC_tmp <= next_PC;
+    if (Reset)
+      PC <= 0;
+    else if (~Busy)
+      PC <= next_PC;
 
-  assign PC = PC_tmp;
 
   //! Combinational, defines `next_PC`
   always @(*)
